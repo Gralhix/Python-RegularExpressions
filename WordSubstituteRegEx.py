@@ -5,8 +5,8 @@
 # Import regular expressions.
 import re
 
-# Find the name Max in the text bellow.
-nomesregex = re.compile(r"Max")
+# Find the name Max, whether it's written as "Max" or "max".
+nomesregex = re.compile(r"Max", re.IGNORECASE)
 
-# Will substitute the name "Max" with "João" and print the results.
-print(nomesregex.sub("João", "O gato Renato e o cão Max foram andar de balão.\nLonge do chão o cão Max e o gato Renato andaram à bulha e perderam o sapato."))
+# Will substitute the name "Max" and "max" with "João" and print the results.
+print(nomesregex.sub("João", "O gato Renato e o cão max foram andar de balão.\nLonge do chão o cão Max e o gato Renato andaram à bulha e perderam o sapato."))
